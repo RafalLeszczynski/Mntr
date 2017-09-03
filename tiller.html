@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Rafal Leszczynski">
+		<meta name="description" content="layout grafik">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>3.3. Tniemy projekt na zlecenie!</title>
+		<script src="https://use.fontawesome.com/32a0e679d7.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" >
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+						
+			@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i');
+
+			* {box-sizing: border-box;}
+			body {
+				margin: 0;
+				font-family: 'Droid Serif', serif;
+			}
+			/*clearfix*/
+			.row:before,
+			.row:after {
+				content:"";
+				display: table;
+				clear: both;
+			}
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+			}
+			section>.container, footer>.container {
+				padding: 50px;	
+				text-align: center;
+			}
+			/* header*/
+			header {
+				background: #313332;
+				height: 50px;
+			}
+			header>nav>div>img {
+				padding: 5px 0;
+				float: left;
+			}
+			header>nav>div>ul {
+				float: right;
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			header>nav>div>ul>li {
+				display: inline-block;
+			}
+			header>nav>div>ul>li>a {
+				line-height: 50px;
+				color: #ffffff;
+				padding: 0 10px;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			header>nav>div>ul>li:hover>a {
+				color: #00C7E8;
+			}
+			/*hero*/	
+			.hero {
+				min-height: 400px;
+				background: url(https://static.garmincdn.com/en_US/store/marine/subcategory/sailing/hero.jpg);
+				background-size: cover;
+			}
+			.slogan {
+				font-size: 25px;
+				background-color: rgba(28, 44, 44, 0.5);
+				float: right;
+				max-width: 300px;
+				padding: 10px 15px 10px 20px;
+				margin-top: 80px;
+				color: #ffffff;
+			}
+			/* three-icons*/
+			.tree-icons > i {
+				font-size: 60px;
+				color: #ffffff;
+				background: #313332;
+				display: inline-block;
+				width: 70px;
+				height: 70px;
+				border-radius: 10%;
+				padding-top: 5px;
+			}
+			.tree-icons:hover i {
+				background-color: #00C7E8;	
+			}
+			.tree-icons:hover h2 {
+				color: #00C7E8;
+			}
+			.tree-icons h2 {
+				margin-bottom: 0;
+			}
+			.tree-icons h4 {
+				margin-top: 5px;
+				padding-left: 20px;
+				padding-right: 20px;
+				color: #A0A0A0;
+			}
+			.examples-text h1 {
+				margin-bottom: 0;
+			}
+			.examples-text h3 {
+				color: #A0A0A0;
+			}
+			/*examples-galery*/
+			.examples-galery {
+				position: relative;
+			}
+			.examples-galery img {
+				width: 100%;
+				height: 100px;
+				display: block;
+			}
+
+			.gallery-btn {
+				border-radius: 20%;
+				margin-top: 40px;
+			}
+			.team {
+				position: relative;	
+			}
+			.team img {
+				height: 130px;
+				width: 130px;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+			.picture-text-picture img {
+				width: 100%;
+			}
+			.picture-text-text {
+				text-align: left;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.numbers p {
+				font-size: 20px;
+				color: #02C6E7;
+				margin-top: 0;
+				text-transform: uppercase;
+			}
+			.cypher {
+				font-size: 60px;
+				color: black;
+				margin-bottom: 0;
+			}
+			.footer {
+				background: #313332;
+				text-align: left;	
+				color: #FFFFFF;
+				padding-right: 20px;
+				}
+			.footer h3 {
+				text-transform: uppercase;
+				padding: 0;
+				margin-top: 8px;
+
+			}
+			.footer i {
+				display: inline-block;
+				background: #02C6E7;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				padding-top: 3px;
+			}
+			.line {
+			  position: relative;
+			  display: inline-block;
+			}
+			.line::after {
+			  content: '';
+			  display: block;
+			  width: 30px;
+			  height: 2px;
+			  background: #ffffff;
+			  position: absolute;
+			  top: 50%;
+			  left: calc(100% + 15px);
+			}
+			.copyright {
+				text-align: center;
+				color: #ffffff;
+				background: #272822;
+			}
+			/* grid*/
+
+
+			[class*="col-"] {
+				float: none;
+				width: 100%;
+			}
+
+			@media (min-width: 768px) {
+			    /* For desktop: */
+				[class*="col-"] {
+					float: left;}
+				.col-1 {width: 8.334%}
+				.col-2 {width: 16.667%}
+				.col-3 {width: 25%}
+				.col-4 {width: 33.3334%}
+				.col-5 {width: 41.667%}
+				.col-6 {width: 50%}
+				.col-7 {width: 58.334%}
+				.col-8 {width: 66.667%}
+				.col-9 {width: 75%}
+				.col-10 {width: 83.334%}
+				.col-11 {width: 91.667%}
+				.col-12 {width: 100%}
+				.layer {
+					position: absolute;
+					background: rgba(0,0,0,0.5);
+					width: 100%;
+					height: 100px;
+					display: none;
+					text-align: center;
+				}
+				.examples-galery:hover .layer {
+					display: block;
+				}
+				.team:hover .layer {
+				 	display: block;
+				 	height: 130px;
+					width: 130px;
+					border-radius: 50%;
+					text-align: center;
+					margin-left: calc(50% - 65px);
+					padding-top: 55px;
+					color: white;
+				}
+			}
+			@media (max-width: 767px) {
+				header {
+					height: 300px;
+				}
+				header>nav>div>img {
+					float: none;
+					display: block;
+					margin: 0 auto;
+					border: solid 1px #FF6501;
+					
+				}
+			    header>nav>div>ul {
+					float: none;
+
+				}
+				header>nav>div>ul>li {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+				.hero {
+				width: 100%;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				min-height: 0; 
+				}
+				/*251: chciałem żeby slogan rozpychał obrazek, ale cały czas widzi "min-height: 400px;" mimo że zapisałem "min-height: 1". Przy "min-height: 0;" obrazek znikał*/
+				/*250: analogiczne pytanie jak poprzednio - jak przy wąskim ekranie pozbyć się białej przerwy pomiędzy hero a kolejną sekcją???*/
+				
+				.slogan {
+				font-size: 1em;
+				float: none; /*rodzic nie widzi elementów które mają float*/
+				width: 100vw;
+				padding: 10px 30px 10px 20px;
+				margin: 0;
+				margin-top: 3vh;
+				max-width: none;
+				text-align: right;
+				
+				height: 20vh;
+
+				color: #ffffff;
+				}
+				/* do wykasowania*/
+				/*section {
+					border: solid 3px yellow;
+				}
+				div {
+					border: solid 3px red;
+				}*/
+				/* koniec do wykasowania*/
+
+
+
+				.examples-galery img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+				.layer-galery {
+					position: absolute;
+					background: rgba(0,0,0,0);
+					width: 100%;
+					height: 100%; 
+					display: block;
+					text-align: center;
+					padding: 25%;
+				}
+				.team {
+					color: #00C7E8;
+					font-size: 20px;
+					font-weight: bold;
+					padding-top: 20px;
+				}
+				#sub-class {
+					padding-top: 20px;
+					padding-left: 0;
+				}
+				
+				
+				.footer h3 {
+				color: #00C7E8;
+				}
+			}
+			@media (max-width: 767px) and (min-width: 550px) {
+
+				.col-mid-6 {
+					width: 50%;
+					float: left;
+				}
+			}
+
+
+
+
+	
+
+	
+
+
+
+			
+		</style>
+
+	</head>
+	<body>
+		<!--header-->
+		<header>
+			<nav class="container">
+				<div class="row">
+					<img src="https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/domain_logos/FLS-Logo-On-Site_en.png" alt="logoexternal">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Pages</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Feature</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!--hero-->
+		<section class="hero">
+			<div class="slogan">
+				<p>Watch out <br>
+				<b>and keep the tiller:)</b></p>
+			</div>
+		</section>
+		<!--three-icons-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-4 tree-icons">
+						<i class="fa fa-globe" aria-hidden="true"></i>
+						<h2>World</h2>
+						<h4>is small nowodays. Lorem ipsum. tibulum volutpat, velit vitae odio. Nunc condimentum tempor, pulvinar interdum, dolor auctor tortor eget odi</h4>
+					</div>
+					<div class="col-4 tree-icons">
+						<i class="fa fa-laptop" aria-hidden="true"></i>
+						<h2>Laptops</h2>
+						<h4>are smaller and smaller, but  greater. tibulum volutpat, velit vitae odio. Nunc condimentum tempor, pulvinar interdum, dolor auctor tortor eget odi</h4>
+					</div>
+					<div class="col-4 tree-icons">
+						<i class="fa fa-cogs" aria-hidden="true"></i>
+						<h2>Gears...</h2>
+						<h4>and tears and lorem ipsum. tibulum volutpat, velit vitae odio. Nunc condimentum tempor, pulvinar interdum, dolor auctor tortor eget odi</h4>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--examples-tekst-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-12 examples-text">
+						<h1>Here are</h1>
+						<h3>some examples of that idea. nd quam porta lorem, pretium erat at quam. Ut facilisis. Maecenas vitae sapien facilisis nunc, tempus ac, rhoncus eget, condimentum nec, pharetra nulla dictum a, sodales auctor, egestas sit amet eleifend adipiscing at, velit. Mau</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--examples-galery-->
+		<section>
+			<!--<div class="container">-->
+				<div class="row">
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn">
+							<i class="fa fa-link" aria-hidden="true"></i>
+							</button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="https://images.pexels.com/photos/510070/pexels-photo-510070.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="Image 1">
+					</div>	
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="https://images.pexels.com/photos/502853/pexels-photo-502853.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="Image 2">
+					</div>		
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/KUt6tGb.jpg" alt="Image 3">
+					</div>						
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/Ue2tUMV.jpg" alt="Image 4">
+					</div>					
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/7Ff7rDB.jpg" alt="Image 2">
+					</div>	
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/Ue2tUMV.jpg" alt="Image 4">
+					</div>						
+				</div>
+				<div class="row vertical-offset">
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/7Ff7rDB.jpg" alt="Image 2">
+					</div>	
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/AGEgF5B.jpg" alt="Image 1">
+					</div>		
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/Ue2tUMV.jpg" alt="Image 4">
+					</div>						
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/KUt6tGb.jpg" alt="Image 3">
+					</div>					
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/AGEgF5B.jpg" alt="Image 1">
+					</div>	
+					<div class="col-2 examples-galery">
+						<div class="layer layer-galery">
+							<button class="gallery-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+							<button class="gallery-btn"><i class="fa fa-search fa-lg"></i></button>
+						</div>
+						<img src="http://i.imgur.com/7Ff7rDB.jpg" alt="Image 2">
+					</div>						
+				</div>
+			<!--</div>-->
+		</section>
+		<!--team-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-3 team">
+						<div class="layer">
+						CEO
+						</div>
+						<img src="https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?h=350&auto=compress&cs=tinysrgb" alt="team1">
+					</div>
+					<div class="col-3 team">
+						<div class="layer">
+						CFO
+						</div>
+						<img src="https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?h=350&auto=compress&cs=tinysrgb" alt="team2">
+					</div>
+					<div class="col-3 team">
+						<div class="layer">
+						CTO
+						</div>
+						<img src="https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?h=350&auto=compress&cs=tinysrgb" alt="team3">
+					</div>
+					<div class="col-3 team">
+						<div class="layer">
+						One man show
+						</div>
+						<img src="https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?h=350&auto=compress&cs=tinysrgb" alt="team3">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--picture-text-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-4 picture-text-picture">
+						<img src="https://images.pexels.com/photos/226474/pexels-photo-226474.jpeg?h=350&auto=compress&cs=tinysrgb" alt="team1">
+					</div>
+					<div class="col-8 picture-text-text">
+						<h2>Very very owesome title</h2>
+						<div class="col-8">
+						Cum sociis natoque penatibus et ultrices posuere mattis at, mauris. Donec pede. Nullam dui vitae lorem sit amet nunc. Maecenas interdum arcu erat, Cum sociis natoque penatibus et ultrices posuere mattis at, mauris. Donec pede. Nullam dui vitae lorem sit amet nunc. Maecenas interdum arcu erat, 
+						</div>
+						<div class="col-4 picture-text-text" id="sub-class">
+						<i>Cum sociis natoque penatibus et ultrices posuere mattis at, mauris. Donec pede. Nullam dui 
+						</i>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-3 col-mid-6 numbers">
+						<h1 class="cypher">60</h1>
+						<p>seconds</p>					
+					</div>
+					<div class="col-3 col-mid-6 numbers">
+						<h1 class="cypher">60</h1>
+						<p>minutes</p>	
+					</div>
+					<div class="col-3 col-mid-6 numbers">
+						<h1 class="cypher">24</h1>
+						<p>hours</p>	
+					</div>
+					<div class="col-3 col-mid-6 numbers">
+						<h1 class="cypher">365</h1>
+						<p>days</p>	
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--footer-->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 footer">
+						<h3 class="line"> about us</h3>
+						<p>Fusce gravida, quam placerat vestibulum. Pellentesque habitant morbi tristique bibendum ac, pede. Nullam in ipsum. Vestibulum tincidunt. Sed adipiscing. Duis ante ipsum vel ligula at lacus eu lectus.  </p>	
+					</div>
+					<div class="col-4 footer">
+						<h3 class="line">get in touch</h3>
+						<div class="row">
+							<div class="col-4">
+							<p>Address</p><!-- jak wyrównać ten tekst z tekstami w kolumnach obok?-->
+							</div>
+							<div class="col-8">
+							<p>ul. Mokotowska 23, 00-230 Warszawa</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+							<p>	Phone </p>
+							</div>
+							<div class="col-8">
+							<p>+48 56 111 2222 Office</p>
+							<p>+48 56 111 2222 Office</p>
+							</div>
+						</div>							
+						<div class="row">
+							<div class="col-4">
+							<p>E-mail</p>
+							</div>
+							<div class="col-8">
+							<p>email@email.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 footer">
+						<h3 class="line">social media</h3>  
+						<p>Fusce gravida, quam placerat vestibulum. Pellentesque habitant </p>
+						<i class="fa fa-facebook"></i>
+    					<i class="fa fa-twitter"></i>
+    					<i class="fa fa-google-plus"></i>
+    					<i class="fa fa-youtube"></i>
+					</div>	
+				</div>
+			</div>
+		</footer>
+		<section>
+			<div class="row copyright">
+			<b>Copyright 2016</b>
+			</div>
+		</section>
+		<section>
+			<a href="https://scr.hu/zm0Xqj">Val HTML</a><br>
+			<a href="https://scr.hu/9yleyR">Val CSS</a>
+		</section>
+	</body>
+</html>
