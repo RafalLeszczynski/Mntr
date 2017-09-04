@@ -12,7 +12,9 @@ Warning: Task "default" not found. Use --force to continue.
 Aborted due to warnings.
 
 3. Nie wyłączyłem na poczatku katalogu node_modules ze śledzenia gitem w .gitignore. 
+
 3a: dopisałem w taki sposób w gitignore, czy tak sie dopisuje katalogi?:
 .gitignore
 /node_modules/
+
 3b. Jak /node_modules/ wycofać z Gita i ze zdalnego repozytorium?
